@@ -113,7 +113,9 @@ namespace Timer
         private void updateOutput(string path)
         {
             if (path == String.Empty)
+            {
                 return;
+            }
 
             TimeSpan t = TimeSpan.FromSeconds(Cooldown);
 
