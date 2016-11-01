@@ -333,7 +333,8 @@
             this.Controls.Add(this.buttonPause);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.buttonStop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Timer";
             this.Text = "Timer";
             this.groupBox1.ResumeLayout(false);
