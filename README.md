@@ -5,4 +5,4 @@ All other devs maid countdown (for at least what i found) has too much features.
 Feel free copy my source code and check how i do it.
 Happy coding & streaming!
 
-[Timer](https://i.imgur.com/saXZAQK.png)
+![Timer](https://i.imgur.com/saXZAQK.png)
