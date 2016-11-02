@@ -4,6 +4,7 @@ All other devs maid countdown _(for at least what i found)_ has too much feature
 
 # System Requirements
 * OS: Windows
+* DLL: Newtonsoft.Json.dll
 * Net version: +3.5
 
 Feel free copy my source code and check how i do it.
