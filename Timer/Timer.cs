@@ -61,19 +61,26 @@ namespace Timer
             CooldownTimer.Start();
             CooldownTimer.Enabled = true;
 
+            updateTimerLabels();
+            updateOutput(ouputText.Text);
+
             buttonStart.Enabled = false;
             buttonPause.Enabled = true;
             buttonStop.Enabled = true;
         }
         private void buttonPause_Click(object sender, EventArgs e)
         {
-            if (buttonPause.Text == "Pause")
+            PauseAction(buttonPause.Text);
+        }
+        private void PauseAction(string curtext)
+        {
+            if (curtext == "Pause")
             {
                 CooldownTimer.Stop();
                 CooldownTimer.Enabled = false;
                 buttonPause.Text = "Resume";
             }
-            else if (buttonPause.Text == "Resume")
+            else if (curtext == "Resume")
             {
                 CooldownTimer.Start();
                 CooldownTimer.Enabled = true;
@@ -91,6 +98,11 @@ namespace Timer
             buttonStart.Enabled = true;
             buttonPause.Enabled = false;
             buttonStop.Enabled = false;
+
+            if (buttonPause.Text == "Resume")
+            {
+                buttonPause.Text = "Pause";
+            }
         }
         private void buttonSearch_Click(object sender, EventArgs e)
         {
@@ -130,7 +142,7 @@ namespace Timer
 
             TimeSpan t = TimeSpan.FromSeconds(Cooldown);
 
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(path))
+            using (StreamWriter file = new StreamWriter(path))
             {
                 file.Write(String.Format(Format.Text, t.ToString()));
             }
@@ -138,6 +150,10 @@ namespace Timer
         #endregion
 
         #region Helper
+        private void Timer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            writeData();
+        }
         private void updateTimerLabels()
         {
             if (Cooldown > 0)

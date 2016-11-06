@@ -337,6 +337,7 @@
             this.MaximizeBox = false;
             this.Name = "Timer";
             this.Text = "Timer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Timer_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericSeconds)).EndInit();
